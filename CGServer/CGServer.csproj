@@ -1,0 +1,37 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.0</TargetFramework>
+    <ApplicationIcon />
+    <OutputType>Exe</OutputType>
+    <StartupObject>CGServer.Program</StartupObject>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Folder Include="wwwroot\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="log4net" Version="2.0.8" />
+    <PackageReference Include="Microsoft.AspNetCore.All" Version="2.0.5" />
+    <PackageReference Include="Microsoft.AspNetCore.Server.IISIntegration" Version="2.0.1" />
+    <PackageReference Include="ServiceStack.Common.Core" Version="5.0.2" />
+    <PackageReference Include="ServiceStack.Core" Version="5.0.2" />
+    <PackageReference Include="ServiceStack.HttpClient.Core" Version="5.0.2" />
+    <PackageReference Include="ServiceStack.Kestrel" Version="5.0.2" />
+    <PackageReference Include="ServiceStack.Mvc.Core" Version="5.0.2" />
+    <PackageReference Include="ServiceStack.ProtoBuf.Core" Version="5.0.2" />
+    <PackageReference Include="ServiceStack.Server.Core" Version="5.0.2" />
+    <PackageReference Include="ServiceStack.Text.Core" Version="5.0.2" />
+  </ItemGroup>
+  <ItemGroup>
+    <DotNetCliToolReference Include="Microsoft.EntityFrameworkCore.Tools.DotNet" Version="2.0.1" />
+    <DotNetCliToolReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Tools" Version="2.0.1" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\CGModels\CGModels.csproj" />
+    <ProjectReference Include="..\CGBridges\CGServiceModels.csproj" />
+    <ProjectReference Include="..\CGMockAdapters\CGMockAdapters.csproj" />
+  </ItemGroup>
+
+</Project>
