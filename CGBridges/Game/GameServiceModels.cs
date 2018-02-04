@@ -1,14 +1,14 @@
-﻿using CGModels;
+﻿using CG.Models;
 using ServiceStack;
 using System.Net;
 
-namespace CGServiceModels.Game
+namespace CG.ServiceModels.Game
 {
     [Route("/games", WebRequestMethods.Http.Get)]
-    public class GetGames : IGet, IReturn<GamesResponse> { }
+    public class GetGames : IGet, IReturn<GetGamesResponse> { }
 
     [Route("/games/{Id}", WebRequestMethods.Http.Get)]
-    public class GetGame : IGet, IReturn<GameResponse>
+    public class GetGame : IGet, IReturn<GetGameResponse>
     {
         public int Id { get; set; }
     }

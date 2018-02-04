@@ -1,4 +1,4 @@
-﻿namespace CGInterfaces.Models
+﻿namespace CG.Interfaces.Models
 {
     public interface IPlayer
     {

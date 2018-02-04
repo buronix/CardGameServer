@@ -1,20 +1,24 @@
-﻿using CGInterfaces.Adapters;
-using CGInterfaces.Models;
-using CGMockAdapters.Mock;
-using CGModels;
-using CGServiceModels;
-using CGServiceModels.Player;
+﻿using CG.Interfaces.Adapters;
+using CG.Interfaces.Models;
+using CG.MockAdapters.Mock;
+using CG.Models;
+using CG.Server.Common.Exceptions;
+using CG.ServiceModels.Player;
 using ServiceStack;
 using System.Collections.Generic;
 using System.Linq;
 
-namespace CGMockAdapters
+namespace CG.MockAdapters
 {
     public class PlayersMockAdapter : IPlayersAdapter
     {
         public IPlayer GetPlayer(IGet getPlayer)
         {
             var reqPlayer = getPlayer as GetPlayer;
+            if (reqPlayer.Id <= 0)
+            {
+                throw new FieldRequiredException("Invalid Request", "Id");
+            }
             PlayerMocks.Players.TryGetValue(reqPlayer.Id, out Player player);
             return player as IPlayer;
         }

@@ -4,7 +4,7 @@
     <TargetFramework>netcoreapp2.0</TargetFramework>
     <ApplicationIcon />
     <OutputType>Exe</OutputType>
-    <StartupObject>CGServer.Program</StartupObject>
+    <StartupObject>CG.Server.Program</StartupObject>
   </PropertyGroup>
 
   <ItemGroup>
@@ -12,7 +12,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="log4net" Version="2.0.8" />
     <PackageReference Include="Microsoft.AspNetCore.All" Version="2.0.5" />
     <PackageReference Include="Microsoft.AspNetCore.Server.IISIntegration" Version="2.0.1" />
     <PackageReference Include="ServiceStack.Common.Core" Version="5.0.2" />
@@ -29,9 +28,10 @@
     <DotNetCliToolReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Tools" Version="2.0.1" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\CGModels\CGModels.csproj" />
-    <ProjectReference Include="..\CGBridges\CGServiceModels.csproj" />
-    <ProjectReference Include="..\CGMockAdapters\CGMockAdapters.csproj" />
+    <ProjectReference Include="..\CG.Logging\CG.Logging.csproj" />
+    <ProjectReference Include="..\CG.Services\CG.Services.csproj" />
+    <ProjectReference Include="..\CGBridges\CG.ServiceModels.csproj" />
+    <ProjectReference Include="..\CGMockAdapters\CG.MockAdapters.csproj" />
   </ItemGroup>
 
 </Project>

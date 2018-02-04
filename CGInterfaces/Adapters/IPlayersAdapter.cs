@@ -1,8 +1,8 @@
-﻿using CGInterfaces.Models;
+﻿using CG.Interfaces.Models;
 using ServiceStack;
 using System.Collections.Generic;
 
-namespace CGInterfaces.Adapters
+namespace CG.Interfaces.Adapters
 {
     public interface IPlayersAdapter
     {

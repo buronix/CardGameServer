@@ -1,19 +1,24 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
-using CGInterfaces.Adapters;
-using CGInterfaces.Models;
-using CGMockAdapters.Mock;
-using CGModels;
+using CG.Interfaces.Adapters;
+using CG.Interfaces.Models;
+using CG.MockAdapters.Mock;
+using CG.Models;
 using ServiceStack;
-using CGServiceModels.Game;
+using CG.ServiceModels.Game;
+using CG.Server.Common.Exceptions;
 
-namespace CGMockAdapters
+namespace CG.MockAdapters
 {
     public class GamesMockAdapter : IGamesAdapter
     {
         public IGame GetCardGame(IGet getGame)
         {
             var reqGame = getGame as GetGame;
+            if(reqGame.Id <= 0)
+            {
+                throw new FieldRequiredException("Invalid Request", "Id");
+            }
             GameMocks.Games.TryGetValue(reqGame.Id, out CardGame game);
             return game as IGame;
         }

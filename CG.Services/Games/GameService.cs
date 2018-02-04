@@ -1,50 +1,33 @@
 ﻿using ServiceStack;
-using CGModels;
-using CGInterfaces.Adapters;
+using CG.Models;
+using CG.Interfaces.Adapters;
 using System.Linq;
-using CGServiceModels.Game;
-using CGServiceModels.Player;
+using CG.ServiceModels.Game;
 
-namespace CGServer.Services
+namespace CG.Services.Games
 {
 
     public class GameService : Service
     {
         public IGamesAdapter GamesAdapter;// = new GamesMockAdapter();
 
-        public IPlayersAdapter PlayersAdapter;// = new PlayersMockAdapter();
-
         public GameService() : base()
         {
             GamesAdapter = ResolveService<IGamesAdapter>();
-            PlayersAdapter = ResolveService<IPlayersAdapter>();
         }
 
         public object Get(GetGames getGames)
         {
 
             // normally you would return a movie from the db
-            return new GamesResponse { Games = GamesAdapter.GetCardGames().Cast<CardGame>().ToList() };
+            return new GetGamesResponse { Games = GamesAdapter.GetCardGames().Cast<CardGame>().ToList() };
         }
 
         public object Get(GetGame getGame)
         {
-            return new GameResponse
+            return new GetGameResponse
             {
                 Game = GamesAdapter.GetCardGame(getGame as IGet) as CardGame
-            };
-        }
-
-        public object Get(GetPlayers getPlayers)
-        {
-            return new PlayersResponse { GamePlayers = PlayersAdapter.GetPlayers().Cast<Player>().ToList()};
-        }
-
-        public object Get(GetPlayer getPlayer)
-        {
-            return new PlayerResponse
-            {
-                GamePlayer = PlayersAdapter.GetPlayer(getPlayer as IGet) as Player
             };
         }
         /*

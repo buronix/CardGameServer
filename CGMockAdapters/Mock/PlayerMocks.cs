@@ -1,8 +1,8 @@
-﻿using CGModels;
+﻿using CG.Models;
 using System;
 using System.Collections.Generic;
 
-namespace CGMockAdapters.Mock
+namespace CG.MockAdapters.Mock
 {
     public static class PlayerMocks
     {

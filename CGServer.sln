@@ -3,17 +3,21 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.27130.2026
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CGServer", "CGServer\CGServer.csproj", "{64A6F534-CF06-45C1-86D7-91560FE15656}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CG.Server", "CGServer\CG.Server.csproj", "{64A6F534-CF06-45C1-86D7-91560FE15656}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CGModels", "..\CGModels\CGModels.csproj", "{AB0ACE4A-DF79-4336-9EA4-DFA3DDCD01D0}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CG.Interfaces", "CGInterfaces\CG.Interfaces.csproj", "{03CA9EE6-E267-4251-BCA4-38D0DB77913D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CGInterfaces", "CGInterfaces\CGInterfaces.csproj", "{03CA9EE6-E267-4251-BCA4-38D0DB77913D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CG.MockAdapters", "CGMockAdapters\CG.MockAdapters.csproj", "{7404E560-C8D1-41B8-B4AA-B7FAE3040E41}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CGMockAdapters", "CGMockAdapters\CGMockAdapters.csproj", "{7404E560-C8D1-41B8-B4AA-B7FAE3040E41}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CG.ServiceModels", "CGBridges\CG.ServiceModels.csproj", "{2B025E89-0538-4BC0-B393-9D5A5FF2FFEC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CGServiceModels", "CGBridges\CGServiceModels.csproj", "{2B025E89-0538-4BC0-B393-9D5A5FF2FFEC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CG.Services", "CG.Services\CG.Services.csproj", "{53F9A65B-81B6-430E-B5FD-FCFF93E93405}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CGClient", "CGClient\CGClient.csproj", "{AB3AE934-A9B3-4A15-AE2A-96FEF321AC9A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CG.Server.Common", "CG.Services.Common\CG.Server.Common.csproj", "{5C01D6B3-287A-42A7-9B3C-85799EAF3917}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CG.Logging", "CG.Logging\CG.Logging.csproj", "{ACB9CD07-6122-45A4-B8B1-5C3A01C53E2E}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CG.Models", "CGModels\CG.Models.csproj", "{D9F63985-46A9-4458-86D3-B5C174FCF62E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -25,10 +29,6 @@ Global
 		{64A6F534-CF06-45C1-86D7-91560FE15656}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{64A6F534-CF06-45C1-86D7-91560FE15656}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{64A6F534-CF06-45C1-86D7-91560FE15656}.Release|Any CPU.Build.0 = Release|Any CPU
-		{AB0ACE4A-DF79-4336-9EA4-DFA3DDCD01D0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{AB0ACE4A-DF79-4336-9EA4-DFA3DDCD01D0}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{AB0ACE4A-DF79-4336-9EA4-DFA3DDCD01D0}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{AB0ACE4A-DF79-4336-9EA4-DFA3DDCD01D0}.Release|Any CPU.Build.0 = Release|Any CPU
 		{03CA9EE6-E267-4251-BCA4-38D0DB77913D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{03CA9EE6-E267-4251-BCA4-38D0DB77913D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{03CA9EE6-E267-4251-BCA4-38D0DB77913D}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -41,10 +41,22 @@ Global
 		{2B025E89-0538-4BC0-B393-9D5A5FF2FFEC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2B025E89-0538-4BC0-B393-9D5A5FF2FFEC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2B025E89-0538-4BC0-B393-9D5A5FF2FFEC}.Release|Any CPU.Build.0 = Release|Any CPU
-		{AB3AE934-A9B3-4A15-AE2A-96FEF321AC9A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{AB3AE934-A9B3-4A15-AE2A-96FEF321AC9A}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{AB3AE934-A9B3-4A15-AE2A-96FEF321AC9A}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{AB3AE934-A9B3-4A15-AE2A-96FEF321AC9A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{53F9A65B-81B6-430E-B5FD-FCFF93E93405}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{53F9A65B-81B6-430E-B5FD-FCFF93E93405}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{53F9A65B-81B6-430E-B5FD-FCFF93E93405}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{53F9A65B-81B6-430E-B5FD-FCFF93E93405}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5C01D6B3-287A-42A7-9B3C-85799EAF3917}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5C01D6B3-287A-42A7-9B3C-85799EAF3917}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5C01D6B3-287A-42A7-9B3C-85799EAF3917}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5C01D6B3-287A-42A7-9B3C-85799EAF3917}.Release|Any CPU.Build.0 = Release|Any CPU
+		{ACB9CD07-6122-45A4-B8B1-5C3A01C53E2E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{ACB9CD07-6122-45A4-B8B1-5C3A01C53E2E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{ACB9CD07-6122-45A4-B8B1-5C3A01C53E2E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{ACB9CD07-6122-45A4-B8B1-5C3A01C53E2E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D9F63985-46A9-4458-86D3-B5C174FCF62E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D9F63985-46A9-4458-86D3-B5C174FCF62E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D9F63985-46A9-4458-86D3-B5C174FCF62E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D9F63985-46A9-4458-86D3-B5C174FCF62E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

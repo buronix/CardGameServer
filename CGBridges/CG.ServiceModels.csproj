@@ -9,8 +9,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\CGModels\CGModels.csproj" />
-    <ProjectReference Include="..\CGInterfaces\CGInterfaces.csproj" />
+    <ProjectReference Include="..\CGInterfaces\CG.Interfaces.csproj" />
+    <ProjectReference Include="..\CGModels\CG.Models.csproj" />
   </ItemGroup>
 
 </Project>
